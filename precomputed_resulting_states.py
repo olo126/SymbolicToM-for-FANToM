@@ -208,7 +208,9 @@ precomputed_resulting_states_all_models = {
     "google/flan-t5-xl": resulting_states_flan_t5_xl,
     "google/flan-t5-xxl": resulting_states_flan_t5_xxl,
     "/gscratch/argon/tianxing/llama/converted/7B": resulting_states_llama_7b,
-    "/gscratch/argon/tianxing/llama/converted/13B": resulting_states_llama_13b
+    "/gscratch/argon/tianxing/llama/converted/13B": resulting_states_llama_13b,
+    "meta-llama/Llama-2-70b-hf": resulting_states_gpt3_davinci,
+    "meta-llama/Llama-2-13b-hf": resulting_states_gpt3_davinci
 }
 
 precomputed_resulting_states_all_models_with_regex = {}
