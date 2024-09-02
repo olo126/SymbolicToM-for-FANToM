@@ -251,24 +251,12 @@ def loadFileWithoutMetadata(fn, story_number_limit=-1):
                 break
         d = {"story": []}
     df = pd.DataFrame(data)
-    #df["story"] = df["story"].apply(" ".join).str.replace("_", " ")
-    print(len(df))
-    print("UTILS")
     return df
 
 
 def loadFileWithCleanQuestionsAndQuestionTypes(fn, story_number_limit=-1):
     df1 = loadFileWithoutMetadata(fn, story_number_limit=story_number_limit)
     df1['question'] = df1['question'].apply(lambda x: x.replace('_', ' ').replace('-', ' - '))
-    """
-    question_type_file = fn + '.trace'
-    if os.path.exists(question_type_file):
-        with open(question_type_file, 'r') as f:
-            df1['qTypeRaw'] = [line.strip().split(',')[-2] for line in f.readlines()]
-    else:
-        print(f"{question_type_file} not found, assigning same type to all questions.")
-        df1['qTypeRaw'] = ['first_order_0_tom' for _ in range(len(df1['question']))]
-    """
 
     return df1
 
@@ -291,7 +279,6 @@ class WANLIPredictor:
             return self.cache[(sentence, ctxt)]
 
         tokenized = self.tokenizer_wanli(sentence, ctxt)
-        print(self.tokenizer_wanli.model_max_length)
         predictions_tmp = self.trainer_wanli.predict([tokenized]).predictions
         predicted_label_ids = predictions_tmp.argmax(axis=1).tolist()
         wanli_scores = scipy.special.softmax(predictions_tmp).tolist()
