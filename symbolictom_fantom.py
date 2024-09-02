@@ -500,7 +500,7 @@ def get_declarative_stories(args, df_temp, declarative_prompt, model, tokenizer)
     story_raw = []
     story_declarative = []
     if os.path.exists("declarative_story_record" + "-" + args.model.split('/')[1] + ".json"):
-        story_record = json.load(open("srs_declarative_story_record" + "-" + args.model.split('/')[1] + ".json", 'r'))
+        story_record = json.load(open("declarative_story_record" + "-" + args.model.split('/')[1] + ".json", 'r'))
     else:
         story_record = {}
     story_num = -1
