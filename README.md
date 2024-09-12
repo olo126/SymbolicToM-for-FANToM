@@ -1,3 +1,5 @@
+* Our Llama-3-70B-Instruct FANToM generations can be found [here](https://drive.google.com/file/d/1W9BNHDqZ3QFalhl-Vkrn6cIwPm6CfB6h/view?usp=sharing)
+
 # Minding Language Models’ (Lack of) Theory of Mind: A Plug-and-Play Multi-Character Belief Tracker
 
 Resources accompanying SymbolicToM, **ACL 2023 Outstanding Paper Award**. See [paper](https://aclanthology.org/2023.acl-long.780/).
